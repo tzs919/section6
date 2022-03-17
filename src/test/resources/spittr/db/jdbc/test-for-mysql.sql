@@ -2,7 +2,7 @@ DROP DATABASE IF EXISTS exampledb6;
 CREATE DATABASE exampledb6 DEFAULT CHARACTER SET utf8;
 USE exampledb6;
 
-create table spitter (
+create table Spitter (
   id int AUTO_INCREMENT  PRIMARY KEY not null,
   username varchar(25) not null,
   password varchar(25) not null,
@@ -11,12 +11,12 @@ create table spitter (
   updateByEmail boolean not null
 )ENGINE=InnoDB;
 
-create table spittle (
+create table Spittle (
   id int AUTO_INCREMENT primary key,
   spitter integer not null,
   message varchar(2000) not null,
   postedTime datetime not null,
-  foreign key (spitter) references spitter(id)
+  foreign key (spitter) references Spitter(id)
 )ENGINE=InnoDB;
 
 
